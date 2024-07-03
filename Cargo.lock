@@ -3397,6 +3397,7 @@ dependencies = [
  "language",
  "log",
  "lsp",
+ "multi_buffer",
  "pretty_assertions",
  "project",
  "rand 0.8.5",
