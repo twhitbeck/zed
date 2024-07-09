@@ -3326,7 +3326,7 @@ async fn test_local_settings(
         let store = cx.global::<SettingsStore>();
         assert_eq!(
             store
-                .local_settings(worktree_b.read(cx).id().to_usize())
+                .local_settings(worktree_b.entity_id().as_u64() as _)
                 .collect::<Vec<_>>(),
             &[
                 (Path::new("").into(), r#"{"tab_size":2}"#.to_string()),
@@ -3345,7 +3345,7 @@ async fn test_local_settings(
         let store = cx.global::<SettingsStore>();
         assert_eq!(
             store
-                .local_settings(worktree_b.read(cx).id().to_usize())
+                .local_settings(worktree_b.entity_id().as_u64() as _)
                 .collect::<Vec<_>>(),
             &[
                 (Path::new("").into(), r#"{}"#.to_string()),
@@ -3374,7 +3374,7 @@ async fn test_local_settings(
         let store = cx.global::<SettingsStore>();
         assert_eq!(
             store
-                .local_settings(worktree_b.read(cx).id().to_usize())
+                .local_settings(worktree_b.entity_id().as_u64() as _)
                 .collect::<Vec<_>>(),
             &[
                 (Path::new("a").into(), r#"{"tab_size":8}"#.to_string()),
@@ -3406,7 +3406,7 @@ async fn test_local_settings(
         let store = cx.global::<SettingsStore>();
         assert_eq!(
             store
-                .local_settings(worktree_b.read(cx).id().to_usize())
+                .local_settings(worktree_b.entity_id().as_u64() as _)
                 .collect::<Vec<_>>(),
             &[(Path::new("a").into(), r#"{"hard_tabs":true}"#.to_string()),]
         )
